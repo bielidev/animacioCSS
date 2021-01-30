@@ -1,0 +1,57 @@
+body {
+    margin:0;
+}
+
+.container {
+    position: relative;
+    margin:0;
+    height: 100vh;
+    width: 100vw;
+}
+#traveller {
+    position: absolute;
+    width: 50px;
+    height: 100vh;
+
+    animation-name: travel;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 4.8s;
+}
+
+img {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    animation-name: bounce, spin;
+    animation-iteration-count: infinite;
+    animation-duration: 4.2s;
+}
+
+@keyframes travel {
+    from { left: 0; }
+    to { left: calc(100vw - 50px); }
+  }
+  @keyframes bounce {
+    from, to  {
+      bottom: 0;
+      animation-timing-function: ease-out;
+    }
+    50% {
+      bottom: calc(100vh - 50px);
+      animation-timing-function: ease-in;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+
